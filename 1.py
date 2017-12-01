@@ -1,7 +1,11 @@
+"""
+Live example at https://repl.it/@juriansluiman/1py
+"""
+
 import requests
 
 data = requests.get('https://raw.githubusercontent.com/juriansluiman/AdventOfCode2017/master/1.txt')
-data += data[0]
+data += data[0] # To fix the last number will be checked too
 
 result = 0
 size   = len(data)
