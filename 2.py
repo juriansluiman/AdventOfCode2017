@@ -18,10 +18,8 @@ print("Part 1:", checksum)
 checksum = 0
 for row in rows:
   values = list(map(int, row.split("\t")))
-  values = sorted(values)
+  values = sorted(values) # Optimization?
   
-  stopped = False
-
   for i,v in enumerate(values):
     testing = values[i+1:]
     for c in testing:
