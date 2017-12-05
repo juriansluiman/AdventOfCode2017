@@ -14,3 +14,19 @@ for row in rows:
   checksum += diff
 
 print("Part 1:", checksum)
+
+checksum = 0
+for row in rows:
+  values = list(map(int, row.split("\t")))
+  values = sorted(values)
+  
+  stopped = False
+
+  for i,v in enumerate(values):
+    testing = values[i+1:]
+    for c in testing:
+      if (c%v == 0):
+        checksum += int(c/v)
+        break
+  
+print("Part 2:", checksum)
