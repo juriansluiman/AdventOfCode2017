@@ -14,4 +14,20 @@ for i,c in enumerate(data):
   if (i+1 != size and c == data[i+1]):
     result += int(c)
     
-print(result)
+    
+print("Part 1:", result)
+
+result = 0 # Reset
+data = data[:-1] # Reset
+size = len(data)
+half = int(size/2)
+
+for i,c in enumerate(data):
+  pos = i+half
+  if (pos >= size):
+    pos = pos-size
+    
+  if (c == data[pos]):
+    result += int(c)
+
+print("Part 2:", result)
